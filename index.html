@@ -1,1 +1,50 @@
-<html>i am shodan</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Look at you, hacker</title>
+    <link rel="stylesheet" media="screen" href="./style.css" />
+  </head>
+
+  <script>
+    function playAudio() {
+      var audio = document.getElementById("myAudio");
+      var start = document.getElementById("start");
+      var scanlines = document.getElementById("scanlines");
+      var shodan = document.getElementById("shodan");
+      start.classList.add("alive");
+      scanlines.classList.add("alive");
+      shodan.classList.add("alive");
+      audio.play();
+    }
+
+    function pauseAudio() {
+      var audio = document.getElementById("myAudio");
+      audio.pause();
+    }
+  </script>
+
+  <audio class="audio" src="./shodan.ogg" autoplay type="audio" loop=""></audio>
+  <audio id="myAudio" autoplay>
+    <source src="./shodan.ogg" type="audio/ogg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="scanlines" class="scanlines"></div>
+  <div id="start" class="start" onclick="playAudio()">
+    <div class="wrapper">
+      <div class="typing">Look at you, hacker...</div>
+    </div>
+  </div>
+
+  <div class="glitch" id="shodan">
+    <div class="glitch__item"></div>
+    <div class="glitch__item"></div>
+    <div class="glitch__item"></div>
+    <div class="glitch__item"></div>
+    <div class="glitch__item"></div>
+    <h1 class="glitch__title"></h1>
+  </div>
+</html>
